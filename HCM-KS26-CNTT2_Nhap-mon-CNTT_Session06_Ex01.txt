@@ -1,9 +1,15 @@
 Bài 1 : Xử lý Log máy chủ dung lượng lớn
 Phần 1:
 Máy tính bị "Not Responding" khi mở bằng Notepad vì Notepad là trình soạn thảo văn bản giao diện đồ họa (GUI) thiết kế cho các tệp nhỏ, khi mở file nặng 800MB thì Notepad sẽ cố gắng tải toàn bộ nội dung tệp vào bộ nhớ RAM và hiển thị trong một trang khiến cho RAM xử lý quá tải và bị treo Not Responding
-Lệnh cat bị lỗi trong CMD vì CMD cũ hơn PowerShell, và CMD được lập trình không có lệnh cat, và cat chỉ có trong PowerShell vì PowerShell hiện đại hơn CMD và PowerShell được thiết kế có tính hỗ trợ tương thích cao với các lệnh phổ biến như hệ điều hành Linux
+Lệnh cat bị lỗi trong CMD vì CMD cũ hơn PowerShell, và CMD quá cũ nên lập trình không có lệnh cat, và cat chỉ có trong PowerShell vì PowerShell hiện đại hơn CMD và PowerShell được thiết kế có tính hỗ trợ tương thích cao với các lệnh phổ biến như hệ điều hành Linux
 Phần 2: lệnh PowerShell
 -Lệnh xem toàn bộ nội dung tệp
 Get-Content -Path server_log_800MB.log | more
 -Lệnh xem 10 dòng cuối cùng để kiểm tra lỗi mới nhất
 Get-Content -Path server_log_800MB.log -Tail 10
+
+ý nghĩa từng tham số lệnh
+-Path : xác định đường dẫn
+more :xem toàn bộ nội dung tệp
+-Tail 10: xem 10 dòng cuối cùng để kiểm tra lỗi mới nhất
+Get-Content đọc nội dung tệp
